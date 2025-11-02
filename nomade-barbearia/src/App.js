@@ -109,12 +109,9 @@ function App() {
                 onClick={e => handleNavClick(e, 'sobre-container')}
               >Sobre</a>
             </li>
-
           </ul>
         </div>
       </nav>
-
-      
 
       {/* Hero Section */}
       <section id="hero" className="hero">
@@ -447,7 +444,7 @@ function App() {
           </div>
         </div>
       </div>
-
+     {/*Footer*/}
       <footer className="footer-container">
         <div className="footer-content">
           <div className="footer-coluna">
