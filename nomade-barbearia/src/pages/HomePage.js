@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaInstagram as Instagram, FaPhone as Phone, FaEnvelope as Mail } from "react-icons/fa";
 import '../App.css';
-
+import '../index.css'
 
 function HomePage() {
   const [mostrarMais, setMostrarMais] = useState(false);

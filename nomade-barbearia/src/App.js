@@ -1,5 +1,6 @@
 // Arquivo: src/App.js
 import './App.css';
+
 import React from 'react';
 // 1. Importe os componentes de rota
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
