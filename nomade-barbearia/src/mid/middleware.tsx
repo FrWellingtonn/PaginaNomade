@@ -1,2 +1,2 @@
-export const config = { matcher: [ '/','/login','/App']
+export const config = { matcher: [ '/homepage','/cadaster','/App']
 };

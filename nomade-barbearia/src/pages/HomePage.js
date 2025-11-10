@@ -3,6 +3,7 @@ import { FaInstagram as Instagram, FaPhone as Phone, FaEnvelope as Mail } from "
 import '../App.css';
 import '../index.css'
 
+
 function HomePage() {
   const [mostrarMais, setMostrarMais] = useState(false);
   const [fade, setFade] = useState(false);
@@ -114,8 +115,6 @@ function HomePage() {
           </ul>
         </div>
       </nav>
-
-      
 
       {/* Hero Section */}
       <section id="hero" className="hero">
