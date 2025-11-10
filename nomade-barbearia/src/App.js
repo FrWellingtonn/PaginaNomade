@@ -5,15 +5,18 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // ✅ Caminhos corrigidos
 
-import CadasterPage from './pages/cadasterpage';
-import HomePage from './pages/homepage';
+
+import CadasterPage from './pages/CadasterPage.js';
+import HomePage from './pages/HomePage.js';
+
+
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/cadastrar" element={<CadasterPage />} />
-        <Route path="/home" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
       </Routes>
     </BrowserRouter>
   );
