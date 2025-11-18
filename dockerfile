@@ -1,6 +1,6 @@
 FROM nginx:alpine
 
-COPY nomade-barbearia/  /usr/share/nginx/html
+COPY ./PaginaNomade /usr/share/nginx/html
 
 EXPOSE 80
 
