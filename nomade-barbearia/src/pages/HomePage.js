@@ -1,19 +1,72 @@
-// Arquivo: src/App.js
-import './App.css';
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
-import HomePage from './pages/HomePage.js';
-
-import CadasterPage from './pages/CadasterPage.js';
-import HomePage from './pages/HomePage.js';
+import React, { useState } from 'react';
+import { FaInstagram as Instagram, FaPhone as Phone, FaEnvelope as Mail } from "react-icons/fa";
+import '../App.css';
+import '../index.css'
 
 
+function HomePage() {
+  const [mostrarMais, setMostrarMais] = useState(false);
+  const [fade, setFade] = useState(false);
+  const [menuAberto, setMenuAberto] = useState(false); // NOVO ESTADO
 
-function App() {
+  // Função para abrir o Whatsapp
+  const abrirWhatsApp = () => {
+    const message = encodeURIComponent("Olá! Gostaria de agendar um corte.");
+    window.open(`https://wa.me/5585987035124?text=${message}`, "_blank");
+  };
+
+  // Função auxiliar para animação de scroll com duração personalizada
+  function scrollToWithOffset(targetY, duration = 700) {
+    const startY = window.pageYOffset;
+    const distance = targetY - startY;
+    let startTime = null;
+
+    function animation(currentTime) {
+      if (!startTime) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const progress = Math.min(timeElapsed / duration, 1);
+
+      // EaseInOutQuad para suavidade
+      const ease = progress < 0.5
+        ? 2 * progress * progress
+        : -1 + (4 - 2 * progress) * progress;
+
+      window.scrollTo(0, startY + distance * ease);
+
+      if (timeElapsed < duration) {
+        requestAnimationFrame(animation);
+      }
+    }
+
+    requestAnimationFrame(animation);
+  }
+
+  // Fechar menu ao navegar
+  const handleNavClick = (e, id) => {
+    e.preventDefault();
+    setMenuAberto(false); // fecha o menu ao clicar
+    const section = document.getElementById(id);
+    if (section) {
+      const navbarHeight = 70; // ajuste conforme sua navbar
+      const sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
+      scrollToWithOffset(sectionTop - navbarHeight, 900); // 900ms de duração
+    }
+  };
+
+  // Função para mostrar mais com fade-in
+  const handleMostrarMais = () => {
+    setMostrarMais(true);
+    setTimeout(() => setFade(true), 50); // ativa fade-in após renderizar
+  };
+
+  // Função para mostrar menos com fade-out
+  const handleMostrarMenos = () => {
+    setFade(false); // ativa fade-out
+    setTimeout(() => setMostrarMais(false), 500); // espera o fade-out terminar
+  };
+
   return (
-<<<<<<< HEAD
-    <div className="App">
+    <div className="HomePage">
       {/* Navbar */}
       <nav className="navbar">
         <div className="navbar-container">
@@ -58,6 +111,7 @@ function App() {
                 onClick={e => handleNavClick(e, 'sobre-container')}
               >Sobre</a>
             </li>
+
           </ul>
         </div>
       </nav>
@@ -393,7 +447,7 @@ function App() {
           </div>
         </div>
       </div>
-     {/*Footer*/}
+
       <footer className="footer-container">
         <div className="footer-content">
           <div className="footer-coluna">
@@ -433,15 +487,7 @@ function App() {
         </div>
       </footer>
     </div>
-=======
-    <BrowserRouter>
-      <Routes>
-        <Route path="/cadastrar" element={<CadasterPage />} />
-        <Route path="/" element={<HomePage />} />
-      </Routes>
-    </BrowserRouter>
->>>>>>> f1c00a71b56f9e006fd641b6b93573cbbd11a985
   );
 }
 
-export default App;
+export default HomePage;

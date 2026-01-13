@@ -8,6 +8,7 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
+
     "start": "react-scripts start",
     "test": "echo \"Error: no test specified\" && exit 1",
     "predeploy": "npm run build",
@@ -19,6 +20,11 @@
     "gh-pages": "^6.3.0"
   },
   "dependencies": {
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^5.0.1",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd nomade-barbearia && npm start",
+    "dev": "cd nomade-barbearia && npm start",
+    "build": "cd nomade-barbearia && npm run build"
+
   }
 }
