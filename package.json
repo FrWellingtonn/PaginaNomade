@@ -7,6 +7,9 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd nomade-barbearia && npm start",
+    "dev": "cd nomade-barbearia && npm start",
+    "build": "cd nomade-barbearia && npm run build"
   }
 }
