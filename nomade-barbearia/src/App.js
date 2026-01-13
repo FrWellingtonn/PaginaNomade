@@ -6,7 +6,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // 2. Importe suas páginas
-import HomePage from '.pages/HomePage.js';
+import HomePage from './pages/HomePage.js';
 import CadasterPage from './pages/CadasterPage.js';
 
 
