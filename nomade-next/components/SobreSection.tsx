@@ -6,7 +6,7 @@ const SobreSection: React.FC = () => {
       id="sobre-container"
       className="min-h-screen bg-gray-100 py-20 px-5 md:px-20"
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-15 items-start">
         <div className="flex flex-col gap-6">
           <h2 className="text-5xl md:text-4xl font-bold text-gray-800 m-0 flex flex-col gap-3">
             Sobre a Nômade
